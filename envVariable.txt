@@ -1,0 +1,5 @@
+like env variable , we have to set environment variable
+
+to get those variable
+
+os.getenv(key)
