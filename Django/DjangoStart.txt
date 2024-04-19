@@ -1,0 +1,41 @@
+1)django-admin startproject Billing
+
+2)py manage.py startapp firstapp
+
+3)Add application to the project in settings.py
+
+4)define view function inside the views.py
+
+5)Define url patern for our view inside urls.py
+
+
+6)Start server
+    py manage.py runserver
+
+7)send the request
+
+
+8)creating separate url.py for every application and adding every aplication url in project url.py
+
+9) writing html code into views is not good so we have to write html code into template , we ahve to write template at 
+
+project level only once we can use this in multiple applications 
+
+
+10)create templates folder inside main project , in that create separate folder with application name to hold that particular 
+
+application specific templates 
+
+
+
+11)for static files we havee to create static folder in project level  , in that static folder create images folder for images
+
+and css folder for css  and configure those in Settings.py
+
+
+12) after configuring our data into settings.py we can check connection using shell
+
+example py manage.py shell
+
+>>> from django.db import connection 
+>>> c = connection.cursor()

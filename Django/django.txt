@@ -1,0 +1,84 @@
+django -admin startproject myproject
+
+python manage.py startapp myapp
+
+1)start writing code in views.py
+
+def home(request):
+	return HttpsResponse(<h1>Blog Home</h1>)
+2)create url.py under myapp and import views here
+
+urlpatterns = [path('',views.home,name='blog-name'),
+               path('about/',views.about, name = 'blog-about')],
+
+3)add this url into prject url.py
+
+path("blog/",include('blog.urls'))
+
+4)python manage.py runserver
+
+5)creating templates(for template we ahve to use render instaed of request)
+
+under myapp--templates--(create new folder)---create.html file under this new folder
+
+6)goto app.py copy class name(ex Blogconfig)
+
+add this into INSTALLED_APPS like 'blog.apps.Blogconfig' under manage.py
+
+7)after creating .html pages ,we can use those by changing views like(instead of httpresponse we have to use render)
+
+def home(request):
+	return render(request,'blog/home.html')
+
+here we can send context also
+
+8)for accessing admin page , we have to create adminrights before creating admin rights , run two commands
+
+--->python manage.py makemigrations
+
+--->python manage.py migrate
+
+9)create superuser
+
+python manage.py createsuperuser
+
+enter email and password
+
+10) creating models 
+
+class Post(models.Model):
+	title = models.CharField(max_length=100)
+	content = models.TextField()
+
+
+11)after creating model we have to run python manage.py makemigrations
+12)python manage.py sqlmigrate blog 0001
+13)python manage.py migrate
+
+14)we can work on models by using shell  
+
+python manage.py shell
+
+we have to import models 
+
+after importing User.objects.all()
+
+User.objects.filter(username='CoreyMS')
+
+we can also create ,after creating obj.save()
+
+15)we have to add this models into admin.py
+
+from .models import post
+
+admin.post.register(Post) 
+
+16)create another app users for registration
+
+python manage.py startapp users
+
+after creating copy class name from app.py of users and add it in INSTALLED_APPS like 'users.app.Userconfig' under manage.py
+
+
+175161
+ 
