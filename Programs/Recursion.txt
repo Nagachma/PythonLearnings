@@ -1,0 +1,20 @@
+there are 3 steps 
+
+1)divide the big problem into small and simple problem
+2)find a base conditon with simple answer
+3)return or rollback answer for base condition to solve all sub problems
+
+
+5+find sum of numbers from 1 to 4
+4+find sum of numbers from 1 to 3
+3+find sum of numbers from 1 to 2
+2+find sum of numbers from 1 to 1
+find sum of numbers from 1 to 4
+
+5+10 = 15
+4+6 = 10
+3+3 = 6
+2+1 = 3
+
+
+
